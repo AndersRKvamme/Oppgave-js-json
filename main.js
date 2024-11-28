@@ -79,15 +79,34 @@ for (let i = 0; i < PersonArray.length ; i++) {
 //was passed into the function. Send one person to uni and print the result.
 //------------------------------------------------------------------------------------------------------------------------------------------------
 
+
+
 function university (person, b){
+    if(Array.isArray(person))
+        console.log("No person provided")
+    if(b !== "bachelors" && b !== "masters")
+        console.log(`${b} is not a valid degree`)
     if (b === "bachelors") {
         person.Age += 2
         person.degree = "bachelors"
+        person.studentLoan = 10000
     }
-}
+    else if (b === "masters") {
+        person.Age += 4
+        person.degree = "masters"
+        person.studentLoan = 20000
+    }
+    // else {
+    //     console.warn(`${b} is not a valid degree`)
+    // }
 
-university(person)
+    }
 
+
+university(PersonArray[2], "bachelors")
+university(PersonArray[3], "masters")
+university(PersonArray[1], "asd")
+university(PersonArray[0], "bachelors")
 console.table(PersonArray);
 
 // 7. API TIME!
@@ -99,3 +118,21 @@ console.table(PersonArray);
 //BONUS!!
 //create a way for you to change the breed of the dogs displayed on your page
 //------------------------------------------------------------------------------------------------------------------------------------------------
+
+class Person{
+
+    constructor(firstname, Surname,age,job){
+        this.firstname = firstname
+        this.Surname = Surname
+        this.age = age
+        this.job = job
+    }
+    get fullName(){
+        return this.firstname + " " + this.Surname
+    }
+}
+
+const per = new Person("per","nordmann", 22, false)
+
+console.table(per)
+console.table(per.fullName)
