@@ -24,6 +24,12 @@ const PersonArray = [
         Surname: "Howard",
         Age: 69,
         job: true,
+    },
+    {
+        FirstName: "Billy", 
+        Surname: "Bob",
+        Age: 2,
+        job: true,
     }
 ];
 //2. print First and last name of the first person in the array. using dot notation on firstname and bracket notation last name
@@ -116,10 +122,10 @@ console.table(PersonArray);
 //------------------------------------------------------------------------------------------------------------------------------------------------
 
 // async function getData() {
-//     const url = "https://dog.ceo/api/breed/hound/images/random/3";
+//     const url = "https://dog.ceo/api/breed/hound/images/random/4";
 //     const response = await fetch (url);
 // if (!response.ok) {
-//     throw new Error(`faen`)
+//     throw new Error(`Error1`)
 // }
 // }
 // const json = await response.json();
