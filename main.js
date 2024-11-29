@@ -115,6 +115,36 @@ console.table(PersonArray);
 //feel free to change the ID of the images and/or add css.
 //------------------------------------------------------------------------------------------------------------------------------------------------
 
+// async function getData() {
+//     const url = "https://dog.ceo/api/breed/hound/images/random/3";
+//     const response = await fetch (url);
+// if (!response.ok) {
+//     throw new Error(`faen`)
+// }
+// }
+// const json = await response.json();
+// console.log(json);
+
+
+fetch("https://dog.ceo/api/breed/hound/images/random/4")
+.then(res => {
+  return res.json();
+})
+.then(data =>{
+  const dogImages = data.message;
+  // console.log(data);
+
+  document.getElementById("dog1").src = dogImages[0];
+  document.getElementById("dog2").src = dogImages[1];
+  document.getElementById("dog3").src = dogImages[2];
+  document.getElementById("dog4").src = dogImages[3];
+})
+  .catch(error => console.log(error));
+
+
+  // .catch(error => console.log(error));
+// https://dog.ceo/api/breed/hound/images/random/3
+
 //BONUS!!
 //create a way for you to change the breed of the dogs displayed on your page
 //------------------------------------------------------------------------------------------------------------------------------------------------
